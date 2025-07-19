@@ -5,7 +5,7 @@ import 'package:subscription_tracker_frontend/core/features/subscription_listing
 
 final routerProvider = Provider((ref){
 return GoRouter(
-  initialLocation: "/register",
+  initialLocation: "/login",
   routes:[
     GoRoute(
     path: "/",
@@ -17,6 +17,13 @@ return GoRouter(
     GoRoute(
     path: "/register",
     name:'register',
+    builder: (context, state) {
+    return RegisterPage();
+    },
+    ),
+    GoRoute(
+    path: "/login",
+    name:'login',
     builder: (context, state) {
     return RegisterPage();
     },

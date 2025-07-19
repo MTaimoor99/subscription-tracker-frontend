@@ -4,7 +4,8 @@ import 'package:subscription_tracker_frontend/core/features/authentication/domai
 import 'package:subscription_tracker_frontend/core/features/authentication/presentation/states/auth_state.dart';
 
 class AuthNotifier extends StateNotifier<AuthState>{
-  final formKey = GlobalKey<FormState>();
+  final registerFormKey = GlobalKey<FormState>();
+  final loginFormKey = GlobalKey<FormState>();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final AuthService _authenticationService;

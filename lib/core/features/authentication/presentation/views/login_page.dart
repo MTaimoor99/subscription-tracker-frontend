@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:subscription_tracker_frontend/core/features/authentication/presentation/providers/auth_provider.dart';
 
-class RegisterPage extends ConsumerWidget {
-  const RegisterPage({super.key});
+class LoginPage extends ConsumerWidget {
+  const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context,WidgetRef ref) {
-    final registerState = ref.watch(authNotifierProvider);
-    final registerNotifier = ref.read(authNotifierProvider.notifier);
+    final loginState = ref.watch(authNotifierProvider);
+    final loginNotifier = ref.read(authNotifierProvider.notifier);
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
-          key: registerNotifier.registerFormKey,
+          key: loginNotifier.loginFormKey,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -21,7 +21,7 @@ class RegisterPage extends ConsumerWidget {
               //Email
               TextFormField(
                 autovalidateMode: AutovalidateMode.onUserInteraction,
-                controller: registerNotifier.emailController,
+                controller: loginNotifier.emailController,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                   ),
@@ -64,7 +64,7 @@ class RegisterPage extends ConsumerWidget {
               //Password
               TextFormField(
                 obscureText: true,
-                controller: registerNotifier.passwordController,
+                controller: loginNotifier.passwordController,
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
@@ -85,8 +85,8 @@ class RegisterPage extends ConsumerWidget {
               ElevatedButton(
               onPressed: () async{
               //Will be sending the API call here.
-              if (registerNotifier.registerFormKey.currentState!.validate()){
-                await registerNotifier.register();
+              if (loginNotifier.loginFormKey.currentState!.validate()){
+                await loginNotifier.register();
               }
               },
               child: Text('Register User'),
