@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:subscription_tracker_frontend/core/features/authentication/presentation/providers/auth_provider.dart';
 
 class RegisterPage extends ConsumerWidget {
   const RegisterPage({super.key});
 
   @override
   Widget build(BuildContext context,WidgetRef ref) {
-    final formKey = GlobalKey<FormState>();
+    final registerState = ref.watch(authNotifierProvider);
+    final registerNotifier = ref.read(authNotifierProvider.notifier);
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
-          key: formKey,
+          key: registerNotifier.formKey,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -78,10 +80,11 @@ class RegisterPage extends ConsumerWidget {
               },
               ),
               SizedBox(height:8),
-              ElevatedButton(onPressed: () {
+              ElevatedButton(
+              onPressed: () async{
               //Will be sending the API call here.
-              if (formKey.currentState!.validate()){
-                print('User registered');
+              if (registerNotifier.formKey.currentState!.validate()){
+                await registerNotifier.register();
               }
               },
               child: Text('Register User'),
