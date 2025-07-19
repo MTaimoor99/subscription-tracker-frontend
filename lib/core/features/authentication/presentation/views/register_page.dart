@@ -21,6 +21,7 @@ class RegisterPage extends ConsumerWidget {
               //Email
               TextFormField(
                 autovalidateMode: AutovalidateMode.onUserInteraction,
+                controller: registerNotifier.emailController,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                   ),
@@ -63,6 +64,7 @@ class RegisterPage extends ConsumerWidget {
               //Password
               TextFormField(
                 obscureText: true,
+                controller: registerNotifier.passwordController,
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(

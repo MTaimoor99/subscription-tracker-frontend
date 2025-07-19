@@ -8,7 +8,8 @@ class AuthRepositoryImpl extends AuthRepository{
 
   
   @override
-  Future<Map<String,dynamic>> register() async{
-    return {};
+  Future<Map<String,dynamic>> register(String email, String password) async{
+    final response = await _remoteDataSource.register(email, password);
+    return response;
   }
 }

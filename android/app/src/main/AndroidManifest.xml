@@ -1,8 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Add this line to allow internet access-->
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:label="subscription_tracker_frontend"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+        android:usesCleartextTraffic="true"> <!-- Add this for HTTP -->
         <activity
             android:name=".MainActivity"
             android:exported="true"

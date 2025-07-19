@@ -1,5 +1,5 @@
 
 
 abstract class AuthRepository {
-  Future<Map<String,dynamic>> register();
+  Future<Map<String,dynamic>> register(String email, String password);
 }
