@@ -86,10 +86,10 @@ class LoginPage extends ConsumerWidget {
               onPressed: () async{
               //Will be sending the API call here.
               if (loginNotifier.loginFormKey.currentState!.validate()){
-                await loginNotifier.register();
+                
               }
               },
-              child: Text('Register User'),
+              child: Text('Login User'),
               )
             ],
           ),
