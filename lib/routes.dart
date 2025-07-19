@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:subscription_tracker_frontend/core/features/authentication/presentation/views/login_page.dart';
 import 'package:subscription_tracker_frontend/core/features/authentication/presentation/views/register_page.dart';
 import 'package:subscription_tracker_frontend/core/features/subscription_listing/presentation/views/subscription_listing_page.dart';
 
@@ -25,7 +26,7 @@ return GoRouter(
     path: "/login",
     name:'login',
     builder: (context, state) {
-    return RegisterPage();
+    return LoginPage();
     },
     ),
   ]

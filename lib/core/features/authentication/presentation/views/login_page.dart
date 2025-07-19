@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:subscription_tracker_frontend/core/features/authentication/presentation/providers/auth_provider.dart';
 
 class LoginPage extends ConsumerWidget {
@@ -86,10 +87,17 @@ class LoginPage extends ConsumerWidget {
               onPressed: () async{
               //Will be sending the API call here.
               if (loginNotifier.loginFormKey.currentState!.validate()){
-                
+
               }
               },
               child: Text('Login User'),
+              ),
+              SizedBox(height:8),
+              TextButton(
+              onPressed: () async{
+              context.go('/register');
+              },
+              child: Text('Register User'),
               )
             ],
           ),
