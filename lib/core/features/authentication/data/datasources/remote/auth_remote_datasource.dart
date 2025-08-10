@@ -7,13 +7,14 @@ class AuthRemoteDataSource {
   AuthRemoteDataSource(this._dio);
 
   
-  Future<Map<String,dynamic>> register(String email, String password) async {
+  Future<Map<String,dynamic>> register(String email, String password,String confirmPassword) async {
     try {
       final response = await _dio.post(
         '$localBackendUrl/auth/register',
         data: {
           'email': email,
           'password': password,
+          'confirmPassword': confirmPassword,
         },
         options: Options(
           headers: {

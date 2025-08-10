@@ -14,7 +14,7 @@ class AuthNotifier extends StateNotifier<AuthState>{
   AuthNotifier(this._authenticationService): super (AuthState());
 
   Future<Map<String,dynamic>> register() async{
-    final response = await _authenticationService.register(emailController.text,passwordController.text);
+    final response = await _authenticationService.register(emailController.text,passwordController.text,confirmPasswordController.text);
     debugPrint('Response that comes back from Spring Boot API:$response');
     return response;
   }

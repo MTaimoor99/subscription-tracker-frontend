@@ -5,8 +5,8 @@ class AuthService {
 
   AuthService(this._authRepository);
 
-  Future<Map<String,dynamic>> register(String email, String password) async{
-    final response = await _authRepository.register(email, password);
+  Future<Map<String,dynamic>> register(String email, String password, String confirmPassword) async{
+    final response = await _authRepository.register(email, password, confirmPassword);
     return response;
   }
 }
