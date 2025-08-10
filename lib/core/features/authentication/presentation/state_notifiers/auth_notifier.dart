@@ -8,6 +8,7 @@ class AuthNotifier extends StateNotifier<AuthState>{
   final loginFormKey = GlobalKey<FormState>();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  final confirmPasswordController = TextEditingController();
   final AuthService _authenticationService;
 
   AuthNotifier(this._authenticationService): super (AuthState());

@@ -79,6 +79,30 @@ class RegisterPage extends ConsumerWidget {
                 if (value.length < 6) {
                   return 'Password must be at least 6 characters long';
                 }
+
+                return null;
+              },
+              ),
+              SizedBox(height:8),
+              TextFormField(
+                obscureText: true,
+                controller: registerNotifier.confirmPasswordController,
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                ),
+                hintText: 'Confirm password',
+                ),
+                validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Confirm password field is required';
+                }
+                if (value.length < 6) {
+                  return 'Confirm password must be at least 6 characters long';
+                }
+                if (value != registerNotifier.passwordController.text){
+                  return "Password and confirm password fields must match";
+                }
                 return null;
               },
               ),
