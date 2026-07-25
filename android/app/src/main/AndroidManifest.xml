@@ -2,7 +2,7 @@
     <!-- Add this line to allow internet access-->
     <uses-permission android:name="android.permission.INTERNET" />
     <application
-        android:label="subscription_tracker_frontend"
+        android:label="SubsNotifier"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
         android:usesCleartextTraffic="true"> <!-- Add this for HTTP -->

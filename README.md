@@ -1,16 +1,10 @@
-# subscription_tracker_frontend
+#Introduction
+This is the frontend for the SubsNotifier mobile application. It is written in Dart and Flutter.
 
-A new Flutter project.
+#What does the app do
+The main idea is this: Users enter their subscriptions (monthly, yearly etc.). Let's say the date they will be charged on the 23rd of every month for it. We have to send a push notification telling them to update the funds for the particular card to their device on the 20th, the 21st and 22nd. 
 
-## Getting Started
+Similarly, if it is on the 15th of September on a yearly basis, send them a notification to update the funds against their card on 12th September, then 13th September, then 14th September.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#How will the app generate revenue
+We will add multi-card support for this thing (tracking subscriptions and sending notifications for them against all cards the user has), but that will be behind a paywall (USD 10 a month). I plan on using RevenueCat for this.

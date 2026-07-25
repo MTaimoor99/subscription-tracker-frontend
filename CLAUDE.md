@@ -1,0 +1,1 @@
+C:/Users/PC/Documents/subscription_tracker_frontend/AGENTS.md

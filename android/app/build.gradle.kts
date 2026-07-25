@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.subscription_tracker_frontend"
+    namespace = "com.taimoor.subsnotifier"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = "29.0.13599879"
 
